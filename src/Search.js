@@ -12,6 +12,9 @@ const Search = ()  => {
     });
   }, []);
 
+  const handleChange = (e) =>{
+    setSearchTerm(e)
+    }
   const searchData = (value) => {
     setSearchTerm(value);
     if (searchTerm !== "") {
@@ -27,12 +30,13 @@ const Search = ()  => {
     }
   };
 
+
   return (
     <div style={{ padding: 20}}>
       <Input style={{ padding: 5, margin: 5 }}  placeholder="Id" onChange={(e) => searchData(e.target.value)}  />
-      <Input style={{ padding: 5, margin: 5 }} placeholder="Name"  />
+      <Input style={{ padding: 5, margin: 5 }} placeholder="Name"  onChange={ (e) => searchData(e.target.value)} />
 
-      <Button style={{ padding: 10, margin: 10 }}onClick={(e) => searchData(e.target.value)}>Search</Button>
+      <Button style={{ padding: 10, margin: 10 }} type="submit" onClick={(e) => handleChange(e.target.value)}>Search</Button>
 
       <Card.Group itemsPerRow={3} style={{ marginTop: 20 }}>
         {searchTerm.length > 1
