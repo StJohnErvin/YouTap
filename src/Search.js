@@ -28,9 +28,9 @@ const Search = ()  => {
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <Input  placeholder="Id" onChange={(e) => searchData(e.target.value)}  />
-      <Input placeholder="Name"  />
+    <div style={{ padding: 20}}>
+      <Input style={{ padding: 5, margin: 5 }}  placeholder="Id" onChange={(e) => searchData(e.target.value)}  />
+      <Input style={{ padding: 5, margin: 5 }} placeholder="Name"  />
 
       <Button style={{ padding: 10, margin: 10 }}onClick={(e) => searchData(e.target.value)}>Search</Button>
 
