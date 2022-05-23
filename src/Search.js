@@ -12,11 +12,7 @@ const Search = ()  => {
     });
   }, []);
 
-  const handleChange = (e) =>{
-    setSearchTerm(e)
-    }
-  const searchData = (value) => {
-    setSearchTerm(value);
+  const handleChange = () =>{
     if (searchTerm !== "") {
       const filteredData = APIData.filter((item) => {
         return Object.values(item)
@@ -28,6 +24,9 @@ const Search = ()  => {
     } else {
       setFilteredResults(APIData);
     }
+    }
+  const searchData = (value) => {
+    setSearchTerm(value);
   };
 
 
